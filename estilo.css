@@ -904,3 +904,9 @@ h2 {
     font-size: 9px;
   }
 }
+.contact-detail .btn {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
