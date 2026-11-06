@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --green: #a6e22e;
+  --green-dark: #6c9d1c;
+  --black: #101510;
+  --black-soft: #171e18;
+  --gray: #a9b0a8;
+  --white: #f5f7f2;
+  --font-title: 'Barlow Condensed', Impact, sans-serif;
+  --font-body: 'Montserrat', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1160px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 105px 0;
+}
+
+.green,
+.section-heading h2 span,
+.intro-copy h2 span,
+.contact h2 span,
+.join-content h2 span {
+  color: var(--green);
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  line-height: 0.98;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(38px, 5vw, 62px);
+  letter-spacing: 0.5px;
+}
+
+.section-heading {
+  margin-bottom: 42px;
+}
+
+.section-heading.centered {
+  text-align: center;
+}
+
+.section-description {
+  color: var(--gray);
+  margin-top: 16px;
+  max-width: 650px;
+}
+
+.centered .section-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HEADER */
+
+.header {
+  background: rgba(16, 21, 16, 0.97);
+  border-bottom: 1px solid rgba(166, 226, 46, 0.16);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-family: var(--font-title);
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: 1px;
+}
+
+.brand-text small {
+  display: block;
+  color: var(--green);
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a {
+  color: #e2e7df;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--green);
+}
+
+.nav .nav-cta {
+  color: var(--black);
+  background: var(--green);
+  padding: 12px 18px;
+}
+
+.nav .nav-cta:hover {
+  color: var(--black);
+  background: #c0f45d;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--green);
+  margin: 5px 0;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(8, 13, 8, 0.96) 0%, rgba(8, 13, 8, 0.78) 48%, rgba(8, 13, 8, 0.28) 100%),
+    url("imagenes/gimnasio-1.jpg") center 45% / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, var(--black) 0%, transparent 25%, transparent 80%, rgba(0,0,0,.2) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 65px;
+}
+
+.hero h1 {
+  font-size: clamp(76px, 12vw, 145px);
+  letter-spacing: -2px;
+  margin: 10px 0 22px;
+}
+
+.hero h1 span {
+  color: var(--green);
+}
+
+.hero-subtitle {
+  color: #e2e7df;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn {
+  min-height: 48px;
+  padding: 14px 22px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  color: var(--black);
+  background: var(--green);
+}
+
+.btn-primary:hover {
+  background: #c0f45d;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.6);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,.1);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #dce4d7;
+  font-size: 9px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.scroll-indicator span {
+  color: var(--green);
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* INTRO */
+
+.intro {
+  background: var(--black);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.intro-copy h2 {
+  margin-bottom: 25px;
+}
+
+.intro-copy p:not(.eyebrow) {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.image-frame {
+  position: relative;
+  min-height: 410px;
+}
+
+.image-frame img {
+  height: 410px;
+  object-fit: cover;
+}
+
+.image-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px 19px;
+  background: var(--green);
+  color: var(--black);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 15px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.text-link span {
+  font-size: 18px;
+  transition: transform .2s;
+}
+
+.text-link:hover span {
+  transform: translateX(5px);
+}
+
+/* VALUES */
+
+.values {
+  background: #171e18;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 48px;
+}
+
+.value-card {
+  padding: 30px;
+  border: 1px solid rgba(166, 226, 46, .2);
+  background: rgba(255,255,255,.015);
+}
+
+.value-number {
+  color: var(--green);
+  font-family: var(--font-title);
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.value-card h3 {
+  font-size: 28px;
+  margin: 17px 0 12px;
+}
+
+.value-card p {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+/* ACTIVITIES */
+
+.activities {
+  background: var(--black);
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.activity-card {
+  background: var(--black-soft);
+  border: 1px solid rgba(255,255,255,.07);
+  overflow: hidden;
+  transition: transform .25s, border-color .25s;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(166, 226, 46, .55);
+}
+
+.activity-card > img {
+  height: 235px;
+  object-fit: cover;
+  filter: saturate(.8);
+}
+
+.activity-content {
+  padding: 27px;
+}
+
+.activity-tag {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.activity-content h3 {
+  font-size: 31px;
+  margin: 10px 0 13px;
+}
+
+.activity-content p,
+.activity-content li {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+.activity-content ul {
+  padding-left: 18px;
+  margin: 16px 0;
+}
+
+.activity-content li {
+  padding: 3px 0;
+}
+
+/* GALLERY */
+
+.gallery {
+  background: #171e18;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 15px;
+}
+
+.gallery-grid img {
+  height: 300px;
+  object-fit: cover;
+  transition: filter .25s, transform .25s;
+}
+
+.gallery-grid img:hover {
+  filter: brightness(1.12);
+  transform: scale(1.01);
+}
+
+/* SCHEDULE */
+
+.schedule {
+  background: var(--black);
+}
+
+.schedule-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 17px;
+}
+
+.schedule-card {
+  padding: 27px;
+  background: var(--black-soft);
+  border: 1px solid rgba(166, 226, 46, .18);
+}
+
+.schedule-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.schedule-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: var(--black);
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.schedule-title h3 {
+  font-size: 26px;
+}
+
+.schedule-title p {
+  color: var(--gray);
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.schedule-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.schedule-times span {
+  padding: 8px 11px;
+  background: rgba(166, 226, 46, .09);
+  border: 1px solid rgba(166, 226, 46, .2);
+  color: #e5eddf;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.saturday,
+.schedule-day {
+  color: var(--gray);
+  font-size: 11px;
+  margin-top: 17px;
+}
+
+.saturday strong,
+.schedule-day strong {
+  color: var(--green);
+}
+
+.schedule-note {
+  color: var(--gray);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 28px;
+}
+
+/* JOIN BANNER */
+
+.join-banner {
+  padding: 100px 0;
+  background:
+    linear-gradient(90deg, rgba(10, 15, 10, .95), rgba(10, 15, 10, .68)),
+    url("imagenes/gimnasio-2.jpg") center / cover no-repeat;
+  text-align: center;
+}
+
+.join-content h2 {
+  font-size: clamp(39px, 6vw, 70px);
+  margin-bottom: 30px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: #171e18;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr .85fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact-intro {
+  color: var(--gray);
+  font-size: 13px;
+  max-width: 470px;
+  margin-bottom: 28px;
+}
+
+.contact-detail {
+  margin-top: 22px;
+}
+
+.detail-label {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.contact-detail p {
+  color: #e1e8dc;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.contact-detail a {
+  color: var(--green);
+}
+
+.contact-detail a:hover {
+  text-decoration: underline;
+}
+
+.contact-box {
+  padding: 35px;
+  background: var(--black);
+  border: 1px solid rgba(166, 226, 46, .25);
+}
+
+.contact-box h3 {
+  font-size: 31px;
+  margin-bottom: 12px;
+}
+
+.contact-box > p {
+  color: var(--gray);
+  font-size: 12px;
+  margin-bottom: 23px;
+}
+
+.contact-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  margin-top: 11px;
+  background: var(--green);
+  color: var(--black);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: background .2s;
+}
+
+.contact-button:hover {
+  background: #c0f45d;
+}
+
+.contact-button span:last-child {
+  font-size: 20px;
+}
+
+.contact-box .contact-small {
+  margin: 25px 0 0;
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 30px 0;
+  background: #0b0f0b;
+  border-top: 1px solid rgba(166, 226, 46, .15);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  font-family: var(--font-title);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.footer-brand span {
+  color: var(--green);
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.footer p {
+  color: var(--gray);
+  font-size: 9px;
+}
+
+/* FLOATING WHATSAPP */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 900;
+  width: 53px;
+  height: 53px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--black);
+  box-shadow: 0 5px 25px rgba(0,0,0,.35);
+  font-size: 19px;
+  font-weight: 900;
+  transition: transform .2s;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 9px;
+  }
+
+  .intro-grid,
+  .contact-grid {
+    gap: 35px;
+  }
+
+  .gallery-grid img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .container {
+    width: min(100% - 34px, 560px);
+  }
+
+  .nav-container {
+    min-height: 70px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 20px 25px 25px;
+    background: #101510;
+    border-bottom: 1px solid rgba(166, 226, 46, .2);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 13px 0;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .nav .nav-cta {
+    text-align: center;
+    margin-top: 12px;
+    padding: 13px;
+  }
+
+  .hero {
+    min-height: 600px;
+    background-position: 58% center;
+  }
+
+  .hero h1 {
+    font-size: clamp(72px, 19vw, 105px);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .intro-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-grid {
+    gap: 35px;
+  }
+
+  .image-frame,
+  .image-frame img {
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .values-grid,
+  .activities-grid,
+  .schedule-list {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    gap: 12px;
+  }
+
+  .value-card {
+    padding: 24px;
+  }
+
+  .activity-card > img {
+    height: 220px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid img {
+    height: 190px;
+  }
+
+  .gallery-grid img:first-child {
+    grid-column: 1 / -1;
+    height: 230px;
+  }
+
+  .join-banner {
+    padding: 75px 0;
+  }
+
+  .contact-grid {
+    gap: 35px;
+  }
+
+  .contact-box {
+    padding: 25px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand-text {
+    font-size: 22px;
+  }
+
+  .logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero h1 {
+    font-size: 68px;
+  }
+
+  .schedule-card {
+    padding: 20px;
+  }
+
+  .schedule-times span {
+    font-size: 9px;
+  }
+}
